@@ -14,55 +14,55 @@
  * @param {number} product.discount - Percentual de desconto
  */
 function ProductCard({ product }) {
-    // Função para formatar preço em Real brasileiro
-    const formatPrice = (value) => {
-      return new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(value);
-    };
-  
-    return (
-      <div className="product-card">
-        {/* Imagem do produto */}
-        <div className="product-card-image">
-          <img src={product.image} alt={product.name} loading="lazy" />
-  
-          {/* Tags (Novo, Desconto) */}
-          <div className="product-tags">
-            {product.isNew && <span className="tag tag-new">Novo</span>}
-            {product.discount && (
-              <span className="tag tag-discount">-{product.discount}%</span>
-            )}
-          </div>
-  
-          {/* Overlay com botões de ação */}
-          <div className="product-card-overlay">
-            <button className="product-action-btn" aria-label="Adicionar à sacola">
-              <i className="bx bx-shopping-bag"></i>
-            </button>
-            <button className="product-action-btn" aria-label="Favoritar">
-              <i className="bx bx-heart"></i>
-            </button>
-            <button className="product-action-btn" aria-label="Visualização rápida">
-              <i className="bx bx-show"></i>
-            </button>
-          </div>
+  // Função para formatar preço em Real brasileiro
+  const formatPrice = (value) => {
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(value);
+  };
+
+  return (
+    <div className="product-card">
+      {/* Imagem do produto */}
+      <div className="product-card-image">
+        <img src={product.image} alt={product.name} loading="lazy" />
+
+        {/* Tags (Novo, Desconto) */}
+        <div className="product-tags">
+          {product.isNew && <span className="tag tag-new">Novo</span>}
+          {product.discount && (
+            <span className="tag tag-discount">-{product.discount}%</span>
+          )}
         </div>
-  
-        {/* Informações do produto */}
-        <div className="product-card-info">
-          <span className="product-tag">{product.tag}</span>
-          <h3 className="product-name">{product.name}</h3>
-          <div className="product-price">
-            {product.oldPrice && (
-              <span className="price-old">{formatPrice(product.oldPrice)}</span>
-            )}
-            <span className="price-current">{formatPrice(product.price)}</span>
-          </div>
+
+        {/* Overlay com botões de ação */}
+        <div className="product-card-overlay">
+          <button className="product-action-btn" aria-label="Adicionar à sacola">
+            <i className="bx bx-shopping-bag"></i>
+          </button>
+          <button className="product-action-btn" aria-label="Favoritar">
+            <i className="bx bx-heart"></i>
+          </button>
+          <button className="product-action-btn" aria-label="Visualização rápida">
+            <i className="bx bx-show"></i>
+          </button>
         </div>
       </div>
-    );
-  }
-  
-  export default ProductCard;
+
+      {/* Informações do produto */}
+      <div className="product-card-info">
+        <span className="product-tag">{product.tag}</span>
+        <h3 className="product-name">{product.name}</h3>
+        <div className="product-price">
+          {product.oldPrice && (
+            <span className="price-old">{formatPrice(product.oldPrice)}</span>
+          )}
+          <span className="price-current">{formatPrice(product.price)}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProductCard;

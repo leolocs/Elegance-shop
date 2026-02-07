@@ -10,20 +10,21 @@
  * @param {boolean} fullWidth - Se o botão ocupa 100% da largura
  * @param {function} onClick - Função executada ao clicar
  */
-export default function Button({ 
-    children, 
-    variant = "primary", 
-    size = "md",
-    fullWidth = false,
-    onClick 
-  }) {
-    // Construindo as classes CSS baseadas nas props
-    const classes = `btn btn-${variant} btn-${size} ${fullWidth ? "btn-full" : ""}`;
-  
-    return (
-      <button className={classes} onClick={onClick}>
-        {children}
-      </button>
-    );
-  }
-  
+function Button({ 
+  children, 
+  variant = "primary", 
+  size = "md",
+  fullWidth = false,
+  onClick 
+}) {
+  // Construindo as classes CSS baseadas nas props
+  const classes = `btn btn-${variant} btn-${size} ${fullWidth ? "btn-full" : ""}`;
+
+  return (
+    <button className={classes} onClick={onClick}>
+      {children}
+    </button>
+  );
+}
+
+export default Button;
