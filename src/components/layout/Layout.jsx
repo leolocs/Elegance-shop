@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import CartDrawer from "../cart/CartDrawer";
-import Toast from "../../ui/Toast";
+import CartDrawer from "../Cart/CartDrawer";
+import Toast from "../ui/Toast";
 import { useCart } from "../../context/CartContext";
 
 // Componente Layout
